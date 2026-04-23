@@ -1,5 +1,12 @@
 // ==================== إعدادات Firebase (استبدلها ببياناتك) ====================
-const firebaseConfig = {
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
     apiKey: "AIzaSyBg9k9ralgHyx6cBTIXcOiHSiE-Nm9ZaA4",
     authDomain: "web-programming-d3561.firebaseapp.com",
     projectId: "web-programming-d3561",
@@ -9,10 +16,9 @@ const firebaseConfig = {
     measurementId: "G-4P6HXQJ232"
   };
 
-// تهيئة Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const auth = firebase.auth();
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 
 // ==================== مساعدة عامة ====================
 function showModal(id) { document.getElementById(id)?.classList.remove('hidden'); }
